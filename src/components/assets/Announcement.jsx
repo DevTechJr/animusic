@@ -6,7 +6,11 @@ const Announcement = () => {
       <p class="text-sm font-medium text-center">
         Check out AniMusic's GitHub Repository for source code and to show
         support!
-        <a class="underline mx-2" href="/">
+        <a
+          class="underline mx-2"
+          target="_blank"
+          href="https://github.com/DevTechJr/animusic"
+        >
           {" "}
           Let's See It! &rarr;{" "}
         </a>
