@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { useEffect } from "react";
 import GenreContext from "../context/GenreContext";
-import GenreCard from "./GenreCard";
+import GenreSearchCard from "./GenreSearchCard";
 import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 
@@ -16,10 +16,30 @@ const GenreResults = () => {
   const { genreId } = useParams();
   const [result] = genreList.filter((genre) => genre.id == genreId);
   const [radios, setRadios] = useState(null);
+  const [searches, setSearches] = useState(null);
+
+  const getTopSongs = (search) => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "64221a0798msh645636fe090b535p10ece0jsna9e0ae35c6d6",
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    };
+
+    fetch(
+      `https://deezerdevs-deezer.p.rapidapi.com/search?q=${search}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setSearches(response))
+      .catch((err) => console.error(err));
+  };
 
   useEffect(() => {
     getGenres();
     setRadios(result?.radios);
+    getTopSongs(result?.title);
   }, [result]);
 
   // getRadioLinks(result?.radios);
@@ -81,6 +101,20 @@ const GenreResults = () => {
               </div>
             </Link>
           ))}
+        </div>
+      </div>
+
+      {/* Search */}
+      <div
+        id="searches"
+        className="my-10 flex flex-col justify-center items-center"
+      >
+        <h1 className="my-5 text-3xl font-bold text-white flex items-center">
+          Explore Top Songs From {result?.title}
+          <FaPlay className="mx-5" />
+        </h1>
+        <div className=" flex justify-center items-center flex-wrap grid grid-cols-2">
+          <GenreSearchCard searches={searches?.data} />
         </div>
       </div>
     </div>

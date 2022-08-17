@@ -48,10 +48,42 @@ const Home = () => {
                 </div>
               </div>
 
+              <div class="divider text-black">AND</div>
+
+              <div class="relative border border-gray-200 rounded-lg shadow-lg w-3/4 mr-auto ml-auto bg-neutral my-4 ">
+                <div class="flex items-center p-4 ">
+                  <img
+                    class="object-cover w-16 h-16 rounded-lg"
+                    src="https://pointzi.com/wp-content/uploads/2017/03/Deezer-logo.jpg"
+                    alt=""
+                  />
+
+                  <div class="ml-3 overflow-hidden">
+                    {" "}
+                    <p className="text-white font-semibold">
+                      {" "}
+                      Supported By{" "}
+                      <span className="font-bold">Deezer Music API</span>{" "}
+                    </p>{" "}
+                    <p class="max-w-xs text-white text-sm text-accent-content font-semibold">
+                      {" "}
+                      Genre & Search Data retrieved from{" "}
+                      <i>
+                        {" "}
+                        <a href="http://developers.deezer.com/api">
+                          {" "}
+                          https://deezer.com/{" "}
+                        </a>{" "}
+                      </i>{" "}
+                    </p>{" "}
+                  </div>
+                </div>
+              </div>
+
               <div class="mt-4 md:mt-8">
                 <Link
                   to="/musicSearch"
-                  class="inline-block px-12 py-3 text-sm font-medium text-primary transition bg-white border border-white rounded hover:bg-primary hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                  class="inline-block w-full px-12 py-3 text-xl font-semibold text-primary transition bg-white border border-white rounded hover:bg-primary hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                 >
                   Start Your Search!
                 </Link>
@@ -132,7 +164,7 @@ const Home = () => {
 
               <p class="mt-4 leading-relaxed text-accent-focus">
                 The results provided are directly extracted from data provided
-                by the Genius Music API and Deezer Dev API.
+                by the Genius Music API and Deezer Music API.
               </p>
             </details>
           </div>
