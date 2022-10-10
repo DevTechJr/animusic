@@ -188,7 +188,7 @@ const Home = () => {
           />
           <img
             className="w-1/6  grayscale hover:grayscale-0 transition ease-in-out duration-500"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/2560px-Heroku_logo.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Netlify_logo.svg/2560px-Netlify_logo.svg.png"
           />
           <img
             className="w-1/6  grayscale hover:grayscale-0 transition ease-in-out duration-500"
